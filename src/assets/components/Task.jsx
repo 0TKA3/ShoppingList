@@ -1,7 +1,9 @@
 import { useState } from "react"
 import trash from '../images/trash-bin.png'
 
-const Task = ({title, count, isChecked, unit,taskList, setTaskList, index}) => {
+const Task = ({title, count, unit,taskList, setTaskList, index}) => {
+
+    
 
 
     let [checked, setChecked] = useState(false)
@@ -28,8 +30,8 @@ const Task = ({title, count, isChecked, unit,taskList, setTaskList, index}) => {
             }
         })
         setTaskList(newList)
-        
     }
+
 
     return (
         <div className={taskClass}>

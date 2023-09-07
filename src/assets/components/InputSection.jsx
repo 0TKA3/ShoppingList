@@ -30,7 +30,7 @@ const InputSection = ({taskList, setTaskList}) => {
   },]
 
   function itemNameHandler(event) {
-    newItem.title = (event.target.value)
+    newItem.title = event.target.value
   }
 
   function itemCountHandler(event) {
@@ -42,12 +42,21 @@ const InputSection = ({taskList, setTaskList}) => {
   }
 
   function createNewItem() {
+    if(newItem.title=='' && taskList.length>0) {
+      newItem.title = taskList[taskList.length-1].title
+    }
+    if(newItem.count=='' && taskList.length>0) {
+      newItem.count = taskList[taskList.length-1].count
+    }
+    if(newItem.unit=='' && taskList.length>0) {
+      newItem.unit = taskList[taskList.length-1].unit
+    }
+
     if(newItem.title!='') {
       setTaskList([...taskList, newItem])
     }
     
   }
-
   return (
     <section className="input-section">
       <div className="input">
