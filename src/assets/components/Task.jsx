@@ -30,6 +30,7 @@ const Task = ({title, count, unit,taskList, setTaskList, index}) => {
             }
         })
         setTaskList(newList)
+        localStorage.setItem('taskStorage', JSON.stringify(newList))
     }
 
 

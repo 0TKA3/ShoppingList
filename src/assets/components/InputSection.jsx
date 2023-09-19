@@ -54,6 +54,7 @@ const InputSection = ({taskList, setTaskList}) => {
 
     if(newItem.title!='') {
       setTaskList([...taskList, newItem])
+      localStorage.setItem('taskStorage', JSON.stringify([...taskList, newItem]))
     }
     
   }
